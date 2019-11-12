@@ -1,4 +1,8 @@
+#ifndef UZYTKOWNIK_H
+#define UZYTKOWNIK_H
+
 #include <iostream>
+
 using namespace std;
 
 class Uzytkownik{
@@ -6,7 +10,7 @@ class Uzytkownik{
     string login;
     string haslo;
 
-    // settery aby dac dostêp innym klasom
+    // settery aby dac dostep innym klasom do prywatnych danych
 public:
     void ustawId(int noweId);
     void ustawLogin(string nowyLogin);
@@ -17,3 +21,5 @@ public:
     string pobierzLogin();
     string pobierzHaslo();
 };
+
+#endif

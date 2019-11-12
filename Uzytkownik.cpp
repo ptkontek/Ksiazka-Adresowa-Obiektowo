@@ -1,6 +1,6 @@
 #include "Uzytkownik.h"
 
-// HERMETYZACJA ustawienie metod, za pomoc¹ inne klasy mogê pobierac wartoœci prywatne z tej klasy
+// HERMETYZACJA ustawienie metod, za pomoca inne klasy moga pobierac wartosci prywatne z tej klasy
 // settery
 void Uzytkownik::ustawId(int noweId) {
     //walidacja, zabezpieczenie programu przed z³ym wprowadzeniem danych
