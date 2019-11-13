@@ -20,10 +20,10 @@ class UzytkownikMenager {
     bool czyIstniejeLogin(string login);
     PlikZUzytkownikami plikZUzytkownikami; //kilka razy bedziemy korzystac z obiektu, wiec mozemy go tutaj utworzyc, zamiast w .cpp
 
-
 public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
+    void wczytajUzytkownikowZPliku();
 };
 
 #endif

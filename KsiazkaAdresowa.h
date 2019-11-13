@@ -10,7 +10,7 @@ class KsiazkaAdresowa {
     UzytkownikMenager uzytkownikMenager; //stworzenie obiektu
 
 public:
-
+    KsiazkaAdresowa();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
 };
