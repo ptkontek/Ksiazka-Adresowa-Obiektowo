@@ -3,14 +3,17 @@
 
 #include <iostream>
 #include <sstream>
+#include <windows.h>
 
 using namespace std;
 
 class MetodyPomocnicze {
+    char wczytajZnak();
 
 public:
     static string konwerjsaIntNaString(int liczba);
-    //static string wczytajLinie();
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
 };
 
 #endif

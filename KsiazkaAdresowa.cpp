@@ -8,7 +8,7 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() { //aby wywolac metofy z klasy uz
 
 }
 
-void KsiazkaAdresowa::logowanieUzytkownika() { //aby wywolac metofy z klasy uzytkownikmenager, tworze obiekt uzytk menager
+int KsiazkaAdresowa::logowanieUzytkownika() { //aby wywolac metofy z klasy uzytkownikmenager, tworze obiekt uzytk menager
 
     uzytkownikMenager.logowanieUzytkownika(); // dzialania na obiekcie uzytkownikMenager, a nie na klasie Uzytkownik.Menager
 
@@ -20,4 +20,16 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
 
 }
 
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika){
 
+    uzytkownikMenager.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+}
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego(){
+
+    metodyPomocnicze.wybierzOpcjeZMenuGlownego();
+}
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika(){
+
+    metodyPomocnicze.wybierzOpcjeZMenuUzytkownika();
+}

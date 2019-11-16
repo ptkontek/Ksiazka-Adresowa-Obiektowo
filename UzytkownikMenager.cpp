@@ -81,7 +81,7 @@ int UzytkownikMenager::logowanieUzytkownika() {
                     {
                         cout << endl << "Zalogowales sie." << endl << endl;
                         system("pause");
-                        return uzytkownik.pobierzId();
+                        return uzytkownicy[i].pobierzId();
                     }
                 }
             }
@@ -89,8 +89,27 @@ int UzytkownikMenager::logowanieUzytkownika() {
             system("pause");
             return 0;
         }
-
-
     }
+}
 
+void UzytkownikMenager::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+{
+    cout << "zmieniasz haslo, id wyonosi:" << idZalogowanegoUzytkownika << endl;
+    Sleep(2000);
+    Uzytkownik uzytkownik;
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    cin >> noweHaslo;
+    uzytkownik.ustawHaslo(noweHaslo);
+
+    for (int i = 0; i < uzytkownicy.size(); i++) {
+        if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
+        {
+           // uzytkownicy[i].pobierzHaslo() = noweHaslo;
+           uzytkownicy[i].ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
