@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <sstream>
-#include <windows.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -12,8 +12,11 @@ class MetodyPomocnicze {
 
 public:
     static string konwerjsaIntNaString(int liczba);
+    int konwersjaStringNaInt(string liczba);
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
+    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    string pobierzLiczbe(string tekst, int pozycjaZnaku);
 };
 
 #endif
