@@ -26,7 +26,6 @@ Uzytkownik UzytkownikMenager::podajDaneNowegoUzytkownika() {
     do {
         cout << "Podaj login: ";
         cin >> login;
-        //uzytkownik.login = wczytajLinie();
         uzytkownik.ustawLogin(login);
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin())== true);
 
@@ -94,8 +93,6 @@ int UzytkownikMenager::logowanieUzytkownika() {
 
 void UzytkownikMenager::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
 {
-    cout << "zmieniasz haslo, id wyonosi:" << idZalogowanegoUzytkownika << endl;
-    Sleep(2000);
     Uzytkownik uzytkownik;
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
@@ -105,7 +102,6 @@ void UzytkownikMenager::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzy
     for (int i = 0; i < uzytkownicy.size(); i++) {
         if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
         {
-           // uzytkownicy[i].pobierzHaslo() = noweHaslo;
            uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");

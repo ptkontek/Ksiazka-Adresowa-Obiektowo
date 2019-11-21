@@ -3,27 +3,24 @@
 
 #include <iostream>
 #include <vector>
-#include <Windows.h>
-#include <fstream>
-#include <sstream>
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
 #include "MetodyPomocnicze.h"
 using namespace std;
 
 class UzytkownikMenager {
-    int idZalogowanegoUzytkownika;
 
+    int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
+    PlikZUzytkownikami plikZUzytkownikami; //kilka razy bedziemy korzystac z obiektu, wiec mozemy go tutaj utworzyc, zamiast w .cpp
+    MetodyPomocnicze metodyPomocnicze;
 
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-    PlikZUzytkownikami plikZUzytkownikami; //kilka razy bedziemy korzystac z obiektu, wiec mozemy go tutaj utworzyc, zamiast w .cpp
-    MetodyPomocnicze metodyPomocnicze;
-    string wczytajLinie();
 
 public:
+
     UzytkownikMenager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
