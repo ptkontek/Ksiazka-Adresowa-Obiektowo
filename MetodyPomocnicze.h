@@ -8,15 +8,14 @@
 using namespace std;
 
 class MetodyPomocnicze {
-    char wczytajZnak();
 
 public:
     static string konwerjsaIntNaString(int liczba);
-    int konwersjaStringNaInt(string liczba);
-    char wybierzOpcjeZMenuGlownego();
-    char wybierzOpcjeZMenuUzytkownika();
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    static int konwersjaStringNaInt(string liczba);
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static char wczytajZnak();
+    static string wczytajLinie();
+    static string pobierzLiczbe(string tekst, int pozycjaZnaku);
 };
 
 #endif

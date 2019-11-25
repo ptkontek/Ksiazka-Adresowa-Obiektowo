@@ -9,20 +9,20 @@
 using namespace std;
 
 class AdresatMenager {
-    int idOstatniegoAdresata;
-    PlikZAdresatami plikZAdresatami; //kilka razy bedziemy korzystac z obiektu, wiec mozemy go tutaj utworzyc, zamiast w .cpp
-    MetodyPomocnicze metodyPomocnicze;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA; // nie chcê aby jakas metoda zmieni³a t¹ dan¹
     vector <Adresat> adresaci;
+    PlikZAdresatami plikZAdresatami; //kilka razy bedziemy korzystac z obiektu, wiec mozemy go tutaj utworzyc, zamiast w .cpp
 
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
 
 public:
-    AdresatMenager(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
+    AdresatMenager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
 
-    int dodajAdresata(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
-    void wyswietlWszystkichAdresatow(vector <Adresat> &adresaci);
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
+    void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
 };
 
 #endif

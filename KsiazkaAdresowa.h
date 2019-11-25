@@ -9,24 +9,31 @@
 using namespace std;
 
 class KsiazkaAdresowa {
-    UzytkownikMenager uzytkownikMenager; //stworzenie obiektu
-    AdresatMenager adresatMenager;
-    MetodyPomocnicze metodyPomocnicze;
-    vector <Adresat> adresaci;
+    UzytkownikMenager uzytkownikMenager; // obiekt tworzy siê od razu po utworzeniu klasy KsAdr, wiec mozemy wczytaæ uzytkownikow w konstruktorze klasy UzMen
+    AdresatMenager *adresatMenager; // wskaŸnik na klasê AdrMen, operatorem new - stworzenie obiektu danej klasy
+    const string NAZWA_PLIKU_Z_ADRESATAMI; // zadna metoda w tej klasie nie zmieni nazwy zmiennej
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenager(nazwaPlikuZUzytkownikami), adresatMenager(nazwaPlikuZAdresatami) {
-        uzytkownikMenager.wczytajUzytkownikowZPliku();
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
+        : uzytkownikMenager(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
+        adresatMenager = NULL;
+    };
+    ~KsiazkaAdresowa() { //sprz¹tanie po klasie
+        delete adresatMenager;
+        adresatMenager = NULL;
     };
     void rejestracjaUzytkownika();
-    int logowanieUzytkownika();
+    void logowanieUzytkownika();
     //void wypiszWszystkichUzytkownikow();
-    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+    void zmianaHaslaZalogowanegoUzytkownika();
+    void wylogowanieUzytkownika();
+
+    void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
+    bool czyUzytkownikJestZalogowany();
+
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
-    int dodajAdresata(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
-    void wyswietlWszystkichAdresatow(vector <Adresat> &adresaci);
 };
 
 #endif

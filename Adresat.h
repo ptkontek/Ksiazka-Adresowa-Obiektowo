@@ -9,9 +9,17 @@ class Adresat {
     int id, idUzytkownika;
     string imie, nazwisko, numerTelefonu, email, adres;
 
-
-    // settery aby dac dostep innym klasom do prywatnych danych
 public:
+    Adresat(int i=0, int idUzytkownika=0, string imie="", string nazwisko="", string numerTelefonu="", string email="", string adres="") {
+        this->id = id;
+        this->idUzytkownika = idUzytkownika;
+        this->imie = imie;
+        this->nazwisko = nazwisko;
+        this->numerTelefonu = numerTelefonu;
+        this->email = email;
+        this->adres = adres;
+    };
+    // settery aby dac dostep innym klasom do prywatnych danych
     void ustawId(int noweId);
     void ustawIdUzytkownika(int noweIdUzytkownika);
     void ustawImie(string noweImie);
@@ -19,7 +27,6 @@ public:
     void ustawNumerTelefonu(string nowyNumerTelefonu);
     void ustawEmail(string nowyEmail);
     void ustawAdres(string nowyAdres);
-
 
     //gettery
     int pobierzId();

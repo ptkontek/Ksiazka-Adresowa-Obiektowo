@@ -7,41 +7,84 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() { //aby wywolac metofy z klasy uz
     uzytkownikMenager.rejestracjaUzytkownika(); // dzialania na obiekcie uzytkownikMenager, a nie na klasie Uzytkownik.Menager
 }
 
-int KsiazkaAdresowa::logowanieUzytkownika() { //aby wywolac metofy z klasy uzytkownikmenager, tworze obiekt uzytk menager
+void KsiazkaAdresowa::logowanieUzytkownika() {
 
-    uzytkownikMenager.logowanieUzytkownika(); // dzialania na obiekcie uzytkownikMenager, a nie na klasie Uzytkownik.Menager
+    uzytkownikMenager.logowanieUzytkownika();
+    if (uzytkownikMenager.czyUzytkownikJestZalogowany()) {
+        adresatMenager = new AdresatMenager(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenager.pobierzIdZalogowanegoUzytkownika()); //gdy wiem, ze uzytkownik jest zalogowany mogê utworzyæ obiekt adrmen
+        //wstrzykiwanie zaleznoœci - albo przez konstruktor albo za pomoc¹ metod, dependence injection
+    }
 }
 
-/*void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
 
-    uzytkownikMenager.wypiszWszystkichUzytkownikow();
-}*/
+    uzytkownikMenager.zmianaHaslaZalogowanegoUzytkownika();
+}
 
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika) {
+void KsiazkaAdresowa::wylogowanieUzytkownika() {
 
-    uzytkownikMenager.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    uzytkownikMenager.wylogowanieUzytkownika();
+    delete adresatMenager; //WAZNE, zeby nie bylo wyciekow pamieci
+    adresatMenager = NULL;
+}
+
+void KsiazkaAdresowa::dodajAdresata() {
+    if (uzytkownikMenager.czyUzytkownikJestZalogowany()) {
+        adresatMenager->dodajAdresata(); //jesli pracujê na wska¿niku to zeby wywo³ac metodê, na któr¹ wskazuje wskaŸnik -> zamiast kropki
+    } else {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
+    if (uzytkownikMenager.czyUzytkownikJestZalogowany()) {
+        adresatMenager->wyswietlWszystkichAdresatow();
+    }
+}
+
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany() {
+    uzytkownikMenager.czyUzytkownikJestZalogowany();
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
+    char wybor;
 
-    metodyPomocnicze.wybierzOpcjeZMenuGlownego();
+    system("cls");
+    cout << "    >>> MENU  GLOWNE <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Rejestracja" << endl;
+    cout << "2. Logowanie" << endl;
+    cout << "9. Koniec programu" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
 }
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
+    char wybor;
 
-    metodyPomocnicze.wybierzOpcjeZMenuUzytkownika();
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+    //cout << "2. Wyszukaj po imieniu" << endl;
+    //cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+    //cout << "5. Usun adresata" << endl;
+    //cout << "6. Edytuj adresata" << endl;
+    cout << "---------------------------" << endl;
+    cout << "7. Zmien haslo" << endl;
+    cout << "8. Wyloguj sie" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
 }
 
-int KsiazkaAdresowa::dodajAdresata(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika) { //aby wywolac metofy z klasy uzytkownikmenager, tworze obiekt uzytk menager
-
-    adresatMenager.dodajAdresata(adresaci, idZalogowanegoUzytkownika); // dzialania na obiekcie uzytkownikMenager, a nie na klasie Uzytkownik.Menager
-}
-
-int KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika) {
-
-    adresatMenager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-}
-
-void KsiazkaAdresowa::wyswietlWszystkichAdresatow(vector <Adresat> &adresaci) {
-
-    adresatMenager.wyswietlWszystkichAdresatow(adresaci);
-}
+/*void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
+    uzytkownikMenager.wypiszWszystkichUzytkownikow();
+}*/
