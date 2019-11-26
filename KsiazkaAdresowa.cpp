@@ -51,6 +51,14 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku() {
     adresatMenager->wyszukajAdresatowPoNazwisku();
 }
 
+void KsiazkaAdresowa::usunAdresata() {
+    adresatMenager->usunAdresata();
+}
+
+//void KsiazkaAdresowa::edytujAdresata() {
+  //  adresatMenager->edytujAdresata();
+//}
+
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany() {
     uzytkownikMenager.czyUzytkownikJestZalogowany();
 }
@@ -81,8 +89,8 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     cout << "2. Wyszukaj po imieniu" << endl;
     cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
-    //cout << "5. Usun adresata" << endl;
-    //cout << "6. Edytuj adresata" << endl;
+    cout << "5. Usun adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
     cout << "8. Wyloguj sie" << endl;
@@ -92,7 +100,3 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
 
     return wybor;
 }
-
-/*void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
-    uzytkownikMenager.wypiszWszystkichUzytkownikow();
-}*/

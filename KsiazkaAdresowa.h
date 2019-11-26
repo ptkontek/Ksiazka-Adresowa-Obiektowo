@@ -33,6 +33,8 @@ public:
     void wyswietlWszystkichAdresatow();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
+    void edytujAdresata();
 
 
     char wybierzOpcjeZMenuGlownego();

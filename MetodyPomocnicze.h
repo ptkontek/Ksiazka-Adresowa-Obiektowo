@@ -16,6 +16,8 @@ public:
     static char wczytajZnak();
     static string wczytajLinie();
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    static int wczytajLiczbeCalkowita();
 };
+
 
 #endif

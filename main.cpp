@@ -45,12 +45,12 @@ int main() {
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
+                ksiazkaAdresowa.usunAdresata();
                 // idUsunietegoAdresata = usunAdresata(adresaci);
-                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+               // idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
             case '6':
-                // edytujAdresata(adresaci);
-                break;
+                // ksiazkaAdresowa.edytujAdresata();
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
