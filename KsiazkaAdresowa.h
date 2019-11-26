@@ -27,10 +27,13 @@ public:
     //void wypiszWszystkichUzytkownikow();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    bool czyUzytkownikJestZalogowany();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+
 
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
