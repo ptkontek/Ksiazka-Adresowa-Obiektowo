@@ -55,9 +55,9 @@ void KsiazkaAdresowa::usunAdresata() {
     adresatMenager->usunAdresata();
 }
 
-//void KsiazkaAdresowa::edytujAdresata() {
-  //  adresatMenager->edytujAdresata();
-//}
+void KsiazkaAdresowa::edytujAdresata() {
+    adresatMenager->edytujAdresata();
+}
 
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany() {
     uzytkownikMenager.czyUzytkownikJestZalogowany();

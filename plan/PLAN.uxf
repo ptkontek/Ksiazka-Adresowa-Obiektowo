@@ -7,7 +7,7 @@
       <x>16</x>
       <y>8</y>
       <w>272</w>
-      <h>216</h>
+      <h>240</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -24,8 +24,12 @@ KsiazkaAdresowa()
 -wybierzOpcjeZMenuGlownego() : char
 -wybierzOpcjeZMenuUzytkownika() : char
 +dodajAdresata() : void
++wyszukajAdresatowPoImieniu() : void
++wyszukajAdresatowPoNazwisku() : void
 +wyswietlWszystkichAdresatow() : void
-+wypiszWszystkichUzytkownikow() : void</panel_attributes>
++wypiszWszystkichUzytkownikow() : void
++usunAdresata() : void
++edytujAdresata() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -55,7 +59,7 @@ Uzytkownik()
     <id>UMLClass</id>
     <coordinates>
       <x>16</x>
-      <y>464</y>
+      <y>472</y>
       <w>360</w>
       <h>160</h>
     </coordinates>
@@ -77,7 +81,7 @@ Uzytkownik()
     <id>UMLClass</id>
     <coordinates>
       <x>16</x>
-      <y>232</y>
+      <y>256</y>
       <w>360</w>
       <h>224</h>
     </coordinates>
@@ -158,9 +162,9 @@ Adresat()
     <id>UMLClass</id>
     <coordinates>
       <x>392</x>
-      <y>232</y>
+      <y>216</y>
       <w>368</w>
-      <h>152</h>
+      <h>216</h>
     </coordinates>
     <panel_attributes>AdresatMenager
 --
@@ -172,14 +176,19 @@ AdresatMenager()
 +dodajAdresata() : int
 -podajDaneNowegoAdresata() : Adresat
 +wyswietlWszystkichAdresatow() : void
--wyświetlDaneAdresata() : void</panel_attributes>
+-wyświetlDaneAdresata() : void
++wyszukajAdresatowPoImieniu() : void
++wyszukajAdresatowPoNazwisku() : void
++usunAdresata() : void
++edytujAdresata() : void
+zaktualizaujDaneWybranegoAdresata() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>392</x>
-      <y>408</y>
+      <y>440</y>
       <w>416</w>
       <h>184</h>
     </coordinates>
@@ -190,14 +199,19 @@ AdresatMenager()
 -
 PlikZAdresatami()
 +dopiszAdresataDoPliku() : bool
--zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
++zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
 -czyPlikJestPusty() : bool
 -pobierzDaneAdresata() : Adresat
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku () : vector
 -pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : int
 -pobierzIdAdresataZDanychOddzielonychPionowymiKreskami () : int
 +pobierzIdOstatniegoAdresata() : int
-</panel_attributes>
+-wyswietlIloscWyszukanychAdresatow() : void
++podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata() : int
++edytujWybranegoAdresataWPliku() : void
++usunWybranegoAdresataZPliku() : void
++pobierzZPlikuIdOstatniegoAdresata() : int
++pobierzZPlikuIdOstatniegoAdresata() : int</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
