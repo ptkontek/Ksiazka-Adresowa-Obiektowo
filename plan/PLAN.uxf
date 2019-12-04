@@ -7,7 +7,7 @@
       <x>16</x>
       <y>8</y>
       <w>272</w>
-      <h>240</h>
+      <h>264</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -59,19 +59,17 @@ Uzytkownik()
     <id>UMLClass</id>
     <coordinates>
       <x>16</x>
-      <y>472</y>
+      <y>504</y>
       <w>360</w>
-      <h>160</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
--NAZWA_PLIKU_Z_UZYTKOWNIKAMI : const String
 -uzytkownicy: vector &lt;Uzytkownik&gt;
 --
 +PlikZUzytkownikami()
 +wczytajUzytkownikowZPliku(): vector
 +dopiszUzytkownikaDoPliku(): void
--czyPlikJestPusty() : bool
 -zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): String
 +zapiszWszystkichUzytkownikowDoPliku() : void
 -pobierzDaneUzytkownika() : Uzytkownik</panel_attributes>
@@ -81,9 +79,9 @@ Uzytkownik()
     <id>UMLClass</id>
     <coordinates>
       <x>16</x>
-      <y>256</y>
+      <y>280</y>
       <w>360</w>
-      <h>224</h>
+      <h>216</h>
     </coordinates>
     <panel_attributes>UzytkownikMenager
 --
@@ -162,9 +160,9 @@ Adresat()
     <id>UMLClass</id>
     <coordinates>
       <x>392</x>
-      <y>216</y>
+      <y>176</y>
       <w>368</w>
-      <h>216</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>AdresatMenager
 --
@@ -188,19 +186,17 @@ zaktualizaujDaneWybranegoAdresata() : void</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>392</x>
-      <y>440</y>
+      <y>392</y>
       <w>416</w>
-      <h>184</h>
+      <h>224</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 -
--NAZWA_PLIKU_Z_ADRESATAMI: const String
 -idOstatniegoAdresata: Integer
 -
 PlikZAdresatami()
 +dopiszAdresataDoPliku() : bool
 +zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
--czyPlikJestPusty() : bool
 -pobierzDaneAdresata() : Adresat
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku () : vector
 -pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : int
@@ -212,6 +208,23 @@ PlikZAdresatami()
 +usunWybranegoAdresataZPliku() : void
 +pobierzZPlikuIdOstatniegoAdresata() : int
 +pobierzZPlikuIdOstatniegoAdresata() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>320</y>
+      <w>200</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>PlikTekstowy
+--
+-NAZWA PLIKU : const String
+--
+PlikTekstowy()
+-czyPlikJestPusty() : bool
++pobierzNazwePliku() : string</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
